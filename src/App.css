@@ -6,11 +6,11 @@
 }
 
 .home,
-.services,
-.products,
+.wallets,
+.chat,
 .contact-us,
 .sign-up,
-.marketing,
+.ethereum,
 .consulting {
   display: flex;
   height: 90vh;
@@ -20,7 +20,7 @@
 }
 
 .home {
-  background-image: url('./images/img-1.jpg');
+  background-image: url('./images/home.gif');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -28,8 +28,8 @@
   font-size: 100px;
 }
 
-.services {
-  background-image: url('./images/img-2.jpg');
+.wallets {
+  background-image: url('./images/wallet.gif');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -37,8 +37,7 @@
   font-size: 100px;
 }
 
-.products {
-  background-image: url('./images/img-3.jpg');
+.chat {
   background-position: center;
   background-size: fill;
   background-repeat: no-repeat;
@@ -47,25 +46,23 @@
 }
 
 .contact-us {
-  background-image: url('./images/img-4.jpg');
+  background-image: url('./images/contact.jpeg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  color: #fff;
+  color: rgb(0, 0, 0);
   font-size: 100px;
 }
 
 .sign-up {
-  background-image: url('./images/img-7.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  color: #fff;
+  color: rgb(0, 0, 0);
   font-size: 100px;
 }
 
-.marketing {
-  background-image: url('./images/img-6.jpg');
+.ethereum {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -74,7 +71,6 @@
 }
 
 .consulting {
-  background-image: url('./images/img-5.jpg');
   background-position: bottom;
   background-size: cover;
   background-repeat: no-repeat;
