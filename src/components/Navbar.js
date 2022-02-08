@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button } from './Button';
 import { Link } from 'react-router-dom';
-import './Navbar.css';
+import '../Stylesheet/Navbar.css';
 import Dropdown from './Dropdown';
 
 function Navbar() {
@@ -32,7 +32,7 @@ function Navbar() {
       <nav className='navbar'>
         <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
           BLOCKCHAIN PROJECT
-          <i class='fab fa-firstdraft' />
+          <i className='fab fa-firstdraft' />
         </Link>
         <div className='menu-icon' onClick={handleClick}>
           <i className={click ? 'fas fa-times' : 'fas fa-bars'} />

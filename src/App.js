@@ -9,6 +9,8 @@ import SignUp from './components/pages/SignUp';
 import Consulting from './components/pages/Consulting';
 import Ethereum from './components/pages/Ethereum';
 import Chat from './components/pages/Chat';
+import Registeration from './components/Registeration';
+import Login from './components/Login';
 
 function App() {
   return (
@@ -19,9 +21,10 @@ function App() {
         <Route path='/wallets' component={Wallets} />
         <Route path='/chat' component={Chat} />
         <Route path='/contact-us' component={ContactUs} />
-        <Route path='/sign-up' component={SignUp} />
+        <Route path='/sign-up' component={Registeration} />
         <Route path='/ethereum' component={Ethereum} />
         <Route path='/consulting' component={Consulting} />
+        <Route path='/login' component={Login} />
       </Switch>
     </Router>
   );
