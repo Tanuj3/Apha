@@ -20,7 +20,7 @@ function App() {
         <Route path='/' exact component={Home} />
         <Route path='/wallets' component={Wallets} />
         <Route path='/chat' component={Chat} />
-        <Route path='/contact-us' component={ContactUs} />
+        <Route path='/contact-us' component={'ContactUs.html'} />
         <Route path='/sign-up' component={Registeration} />
         <Route path='/ethereum' component={Ethereum} />
         <Route path='/consulting' component={Consulting} />
