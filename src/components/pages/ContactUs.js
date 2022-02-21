@@ -1,50 +1,104 @@
 import React from 'react';
 import '../../App.css';
+import React, { useState } from 'react';
+import axios from 'axios';
+import { Form, Button } from 'react-bootstrap';
 
-export default function ContactUs() {
-  return
-  <>
-  <div class="container">
-    <div class="content">
-      <div class="left-side">
-        <div class="address details">
-          <i class="fas fa-map-marker-alt"></i>
-          <div class="topic">Address</div>
-          <div class="text-one">Surkhet, NP12</div>
-          <div class="text-two">Birendranagar 06</div>
-        </div>
-        <div class="phone details">
-          <i class="fas fa-phone-alt"></i>
-          <div class="topic">Phone</div>
-          <div class="text-one">+0098 9893 5647</div>
-          <div class="text-two">+0096 3434 5678</div>
-        </div>
-        <div class="email details">
-          <i class="fas fa-envelope"></i>
-          <div class="topic">Email</div>
-          <div class="text-one">codinglab@gmail.com</div>
-          <div class="text-two">info.codinglab@gmail.com</div>
-        </div>
-      </div>
-      <div class="right-side">
-        <div class="topic-text">Send us a message</div>
-        <p>If you have any work from me or any types of quries related to my tutorial, you can send me message from here. It's my pleasure to help you.</p>
-        <form action="#">
-          <div class="input-box">
-            <input type="text" placeholder="Enter your name"/>
-          </div>
-          <div class="input-box">
-            <input type="text" placeholder="Enter your email"/>
-          </div>
-          <div class="input-box message-box">
+const ContactUs = () => {
+  const [state, setState] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
 
-          </div>
-          <div class="button">
-            <input type="button" value="Send Now"/>
-          </div>
-        </form>
-      </div>
+  const [result, setResult] = useState(null);
+
+  const sendEmail = event => {
+    event.preventDefault();
+    axios
+      .post('/send', { ...state })
+      .then(response => {
+        setResult(response.data);
+        setState({
+          name: '',
+          email: '',
+          subject: '',
+          message: ''
+        });
+      })
+      .catch(() => {
+        setResult({
+          success: false,
+          message: 'Something went wrong. Try again later'
+        });
+      });
+  };
+
+  const onInputChange = event => {
+    const { name, value } = event.target;
+
+    setState({
+      ...state,
+      [name]: value
+    });
+  };
+
+  return (
+    <div>
+      {result && (
+        <p className={`${result.success ? 'success' : 'error'}`}>
+          {result.message}
+        </p>
+      )}
+      <form onSubmit={sendEmail}>
+        <Form.Group controlId="name">
+          <Form.Label>Full Name</Form.Label>
+          <Form.Control
+            type="text"
+            name="name"
+            value={state.name}
+            placeholder="Enter your full name"
+            onChange={onInputChange}
+          />
+        </Form.Group>
+        <Form.Group controlId="email">
+          <Form.Label>Email</Form.Label>
+          <Form.Control
+            type="text"
+            name="email"
+            value={state.email}
+            placeholder="Enter your email"
+            onChange={onInputChange}
+          />
+        </Form.Group>
+        <Form.Group controlId="subject">
+          <Form.Label>Subject</Form.Label>
+          <Form.Control
+            type="text"
+            name="subject"
+            value={state.subject}
+            placeholder="Enter subject"
+            onChange={onInputChange}
+          />
+        </Form.Group>
+        <Form.Group controlId="subject">
+          <Form.Label>Message</Form.Label>
+          <Form.Control
+            as="textarea"
+            name="message"
+            value={state.message}
+            rows="3"
+            placeholder="Enter your message"
+            onChange={onInputChange}
+          />
+        </Form.Group>
+        <Button variant="primary" type="submit">
+          Submit
+        </Button>
+      </form>
     </div>
-  </div>
-  </>
-}
+  );
+};
+
+export default ContactUs;
