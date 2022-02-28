@@ -1,10 +1,16 @@
 import './sidebar.css'
-import  {RssFeed} from '@mui/icons-material'
-import VideocamIcon from '@mui/icons-material/Videocam';import ChatIcon from '@mui/icons-material/Chat';import GroupIcon from '@mui/icons-material/Group';
-import BookmarkIcon from '@mui/icons-material/Bookmark';import QuestionMarkIcon from '@mui/icons-material/QuestionMark';import WorkIcon from '@mui/icons-material/Work';
-import EventIcon from '@mui/icons-material/Event';import SchoolIcon from '@mui/icons-material/School';
+import {FaRss} from "react-icons/fa";
+import {FaVideo} from "react-icons/fa";
+import {MdChat} from "react-icons/md";
+import {MdGroups} from "react-icons/md";
+import {MdBookmarks} from "react-icons/md";
+import {HiQuestionMarkCircle} from "react-icons/hi";
+import {MdOutlineWork} from "react-icons/md";
+import {MdEvent} from "react-icons/md";
+import {MdOutlineSchool} from "react-icons/md";
 import  {Users} from "../../dummyData"
 import CloseFriend from '../closeFriend/CloseFriend';
+import {GiWallet} from "react-icons/gi";
 
 
 export default function Sidebar() {
@@ -13,48 +19,48 @@ export default function Sidebar() {
             <div className="sidebarWrapper">
                 <ul className="sidebarList">
                     <li className="sidebarListItem">
-                    <RssFeed className='sidebarIcon'/>
+                    <FaRss className='sidebarIcon' size="1.5em" color="Orange"/>
                     <span className="sidebarListItemText">Feed</span>
                     </li>
 
                     <li className="sidebarListItem">
-                    <ChatIcon className='sidebarIcon'/>
+                    <MdChat className='sidebarIcon' size="1.5em" color="Green"/>
                     <span className="sidebarListItemText">Chat</span>
                     </li>
 
                     <li className="sidebarListItem">
-                    <VideocamIcon className='sidebarIcon'/>
+                    <FaVideo className='sidebarIcon' size="1.5em" color="Blue"/>
                     <span className="sidebarListItemText">Videos</span>
                     </li>
 
                     <li className="sidebarListItem">
-                    <GroupIcon className='sidebarIcon'/>
+                    <MdGroups className='sidebarIcon' size="1.5em" color="Purple"/>
                     <span className="sidebarListItemText">Group</span>
                     </li>
 
                     <li className="sidebarListItem">
-                    <BookmarkIcon className='sidebarIcon'/>
+                    <MdBookmarks className='sidebarIcon' size="1.5em" color="Pink"/>
                     <span className="sidebarListItemText">Bookmarks</span>
                     </li>
 
                     <li className="sidebarListItem">
-                    <QuestionMarkIcon className='sidebarIcon'/>
+                    <HiQuestionMarkCircle className='sidebarIcon' size="1.5em" color="black"/>
                     <span className="sidebarListItemText">Questions</span>
                     </li>
 
                     <li className="sidebarListItem">
-                    <WorkIcon className='sidebarIcon'/>
+                    <MdOutlineWork className='sidebarIcon' size="1.5em" color="black"/>
                     <span className="sidebarListItemText">Jobs</span>
 
                     </li>
                     <li className="sidebarListItem">
-                    <EventIcon className='sidebarIcon'/>
+                    <MdEvent className='sidebarIcon' size="1.5em" color="cornflowerblue"/>
                     <span className="sidebarListItemText">Events</span>
                     </li>
 
                     <li className="sidebarListItem">
-                    <SchoolIcon className='sidebarIcon'/>
-                    <span className="sidebarListItemText">Courses</span>
+                    <GiWallet className='sidebarIcon' size="1.5em" color="mediumseagreen   "/>
+                    <span className="sidebarListItemText">Wallet</span>
                     </li>
                 </ul>
                 <button className="sidebarButton">Show More</button>

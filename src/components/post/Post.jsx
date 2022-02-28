@@ -27,7 +27,7 @@ export default function Post({ post }) {
     }
    fetchUser();
     
-  }, [])
+  }, [post.userId])
  
   return (
     <div className='post'>

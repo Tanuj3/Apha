@@ -14,7 +14,7 @@ export default function rightbar({ profile }) {
                 <img src="./assets/gift.png" className="birthdayImg" alt="" />
                 <span className="birthdayText"><b>Piyush Sahu </b>and <b>3 other friends</b> have a birthday today </span>
             </div>
-            <img src="./assets/ad.png" alt="" className="rightbarAd" />
+            <img src="./assets/cake.jpg" alt="" className="rightbarAd" />
             <h4 className="rightbarTitle">Online Friends</h4>
             {Users.map((u) => (<Online key={u.id} user={u} />))}
         </>
