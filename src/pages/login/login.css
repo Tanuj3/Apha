@@ -88,4 +88,13 @@
 
 }
 
+.loginButton:focus {
+
+    outline: none;
+}
+
+.loginButton:disabled {
+    cursor: not-allowed;
+}
+
 
