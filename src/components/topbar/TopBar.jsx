@@ -18,6 +18,7 @@ export default function Topbar() {
     <div className="topbarContainer">
       <div className="topbarLeft">
         <Link to="/" style={{textDecoration:"none"}}><span className="logo">NAME HERE</span></Link>
+        <span className="badge">{user.username}</span>
       </div>
       <div className="topbarCenter">
         <div className="searchbar">
@@ -38,10 +39,12 @@ export default function Topbar() {
             <Person />
             <span className="topbarIconBadge">1</span>
           </div>
+          <Link to="/messenger" color="white" >
           <div className="topbarIconItem">
-            <Chat />
+           <Chat />
             <span className="topbarIconBadge">2</span>
           </div>
+          </Link>
           <div className="topbarIconItem">
             <Notifications />
             <span className="topbarIconBadge">1</span>

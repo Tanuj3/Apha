@@ -97,9 +97,9 @@ export default function Rightbar({ user }) {
               <span className="rightbarInfoValue">
                 {user.relationship === 1
                   ? "Single"
-                  : user.relationship === 1
+                  : user.relationship === 2
                   ? "Married"
-                  : "-"}
+                  : "Not Mentioned"}
               </span>
             </div>
           </div>
@@ -120,7 +120,7 @@ export default function Rightbar({ user }) {
                     alt=""
                     className="rightbarFollowingImg"
                   />
-                  <span className="rightbarFollowingName">{friend.username}</span>
+                  <span className="rightbarFollowingName">{friend.usernamef}</span>
                 </div>
               </Link>
             ))}

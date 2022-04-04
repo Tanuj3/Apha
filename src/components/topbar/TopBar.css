@@ -94,3 +94,19 @@
   object-fit: cover;
   cursor: pointer;
 }
+
+a{
+  color: white;
+}
+
+
+.badge {
+  font-size: 15px;
+  margin-left: 10px;
+  font-weight: bold;
+  color:yellow;
+}
+
+.badge:focus {
+  color: red;
+}

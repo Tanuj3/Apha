@@ -9,6 +9,7 @@ import axios from "axios"
 import { Cancel } from '@mui/icons-material';
 
 export default function Share() {
+
     const PF = process.env.REACT_APP_PUBLIC_FOLDER;
     const { user } = useContext(AuthContext)
 
@@ -25,7 +26,7 @@ export default function Share() {
         if (file) {
             const data = new FormData();
             const fileName = Date.now() + file.name;
-            data.append("name",fileName)
+            data.append("name", fileName)
             data.append("file", file)
             newPost.img = fileName
             try {
@@ -56,10 +57,10 @@ export default function Share() {
                 </div>
                 <hr className="shareHr" />
                 {file &&
-                <div className="shareImgContainer">
-                    <img src={URL.createObjectURL(file)} alt="" className="shareImg" />
-                    <Cancel className='shareCancelImg' onClick={() => setFile(null)}   />
-                </div>
+                    <div className="shareImgContainer">
+                        <img src={URL.createObjectURL(file)} alt="" className="shareImg" />
+                        <Cancel className='shareCancelImg' onClick={() => setFile(null)} />
+                    </div>
                 }
                 <form className="shareBottom" onSubmit={submitHandler}>
                     <div className="shareOptions">

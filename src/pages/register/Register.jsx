@@ -38,7 +38,7 @@ catch(err) {
             <div className="loginWrapper">
                 <div className="loginLeft">
                     <h3 className="loginLogo">Name Here</h3>
-                    <span className="loginDesc">Connect with Official around you</span>
+                    <span className="loginDesc">Connect with Officials around you</span>
                 </div>
                 <div className="loginRight" >
                     <form className="loginBox" onSubmit={handleClick}>

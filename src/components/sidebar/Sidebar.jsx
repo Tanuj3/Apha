@@ -11,13 +11,30 @@ import {MdOutlineSchool} from "react-icons/md";
 import  {Users} from "../../dummyData"
 import CloseFriend from '../closeFriend/CloseFriend';
 import {GiWallet} from "react-icons/gi";
-
-
+import RocketIcon from '@mui/icons-material/Rocket';
+import SentimentSatisfiedOutlinedIcon from '@mui/icons-material/SentimentSatisfiedOutlined';
+import { AuthContext } from '../../context/AuthContext';
+import { useContext } from 'react';
 export default function Sidebar() {
+
+
+    const { user: currentUser, dispatch } = useContext(AuthContext);
+    const handleSubmit = () => {
+        localStorage.clear();
+    }
+
+
+
     return (
         <div className='sidebar'>
             <div className="sidebarWrapper">
                 <ul className="sidebarList">
+
+                <li className="sidebarListItem">
+                    <SentimentSatisfiedOutlinedIcon className='sidebarIcon' size="0.8em" color="green"/>
+                    <span className="sidebarListItemText title">Welcome {currentUser.username} </span>
+                    </li>
+
                     <li className="sidebarListItem">
                     <FaRss className='sidebarIcon' size="1.5em" color="Orange"/>
                     <span className="sidebarListItemText">Feed</span>
@@ -29,44 +46,23 @@ export default function Sidebar() {
                     </li>
 
                     <li className="sidebarListItem">
-                    <FaVideo className='sidebarIcon' size="1.5em" color="Blue"/>
-                    <span className="sidebarListItemText">Videos</span>
+                    <MdOutlineSchool className='sidebarIcon' size="1.5em" color="green"/>
+                    <span className="sidebarListItemText">Investors</span>
                     </li>
 
                     <li className="sidebarListItem">
-                    <MdGroups className='sidebarIcon' size="1.5em" color="Purple"/>
-                    <span className="sidebarListItemText">Group</span>
+                    <RocketIcon className='sidebarIcon' size="1.5em" color="Purple"/>
+                    <span className="sidebarListItemText">Startups</span>
                     </li>
 
                     <li className="sidebarListItem">
                     <MdBookmarks className='sidebarIcon' size="1.5em" color="Pink"/>
-                    <span className="sidebarListItemText">Bookmarks</span>
-                    </li>
-
-                    <li className="sidebarListItem">
-                    <HiQuestionMarkCircle className='sidebarIcon' size="1.5em" color="black"/>
-                    <span className="sidebarListItemText">Questions</span>
-                    </li>
-
-                    <li className="sidebarListItem">
-                    <MdOutlineWork className='sidebarIcon' size="1.5em" color="black"/>
-                    <span className="sidebarListItemText">Jobs</span>
-
-                    </li>
-                    <li className="sidebarListItem">
-                    <MdEvent className='sidebarIcon' size="1.5em" color="cornflowerblue"/>
-                    <span className="sidebarListItemText">Events</span>
-                    </li>
-
-                    <li className="sidebarListItem">
-                    <GiWallet className='sidebarIcon' size="1.5em" color="mediumseagreen   "/>
-                    <span className="sidebarListItemText">Wallet</span>
+                    <span className="sidebarListItemText">Sales</span>
                     </li>
                 </ul>
-                <button className="sidebarButton">Show More</button>
                 <hr className='sidebarHr'/>
                 <ul className="sidebarFriendList">
-                    {Users.map( u => (<CloseFriend key={u.id} user={u}/>))}   
+                 <form onSubmit={handleSubmit}>  <button className='sidebarButton logout' type='submit'>Logout</button> </form> 
                 </ul>
             </div>
         </div>

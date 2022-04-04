@@ -63,3 +63,13 @@
     cursor: pointer;
     font-size: 17px;
 }
+
+.logout {
+    background-color: rgb(185, 13, 13);
+    color: white;
+    cursor: pointer;
+}
+
+.title {
+    color: blue;
+}
