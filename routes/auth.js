@@ -18,6 +18,7 @@ router.post("/register",async(req,res) => {
         const user= await new User({
             username:req.body.username,
             email:req.body.email,
+            role:req.body.role,
             password:hashedPassword
          })
         
