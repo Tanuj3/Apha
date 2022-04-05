@@ -28,6 +28,7 @@ export default function Rightbar({ user }) {
         try {
           const friendList = await axios.get("/users/friends/" + user._id);
           setFriends(friendList.data);
+
         } catch (err) {
           console.log(err);
         }
@@ -107,7 +108,7 @@ export default function Rightbar({ user }) {
           <div className="rightbarFollowings">
             {friends.map((friend) => (
               <Link
-                to={"/profile/" + friend.username}
+                to={"/profile/" + friend?.username}
                 style={{ textDecoration: "none" }}
               >
                 <div className="rightbarFollowing">
@@ -120,7 +121,8 @@ export default function Rightbar({ user }) {
                     alt=""
                     className="rightbarFollowingImg"
                   />
-                  <span className="rightbarFollowingName">{friend.usernamef}</span>
+                  {console.log(friend.username)}
+                  <span className="rightbarFollowingName">{friend.username?.charAt(0)?.toUpperCase() + friend.username?.slice(1)}</span>
                 </div>
               </Link>
             ))}

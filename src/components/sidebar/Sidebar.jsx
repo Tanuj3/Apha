@@ -1,20 +1,11 @@
 import './sidebar.css'
-import {FaRss} from "react-icons/fa";
-import {FaVideo} from "react-icons/fa";
-import {MdChat} from "react-icons/md";
-import {MdGroups} from "react-icons/md";
-import {MdBookmarks} from "react-icons/md";
-import {HiQuestionMarkCircle} from "react-icons/hi";
-import {MdOutlineWork} from "react-icons/md";
-import {MdEvent} from "react-icons/md";
-import {MdOutlineSchool} from "react-icons/md";
-import  {Users} from "../../dummyData"
-import CloseFriend from '../closeFriend/CloseFriend';
-import {GiWallet} from "react-icons/gi";
 import RocketIcon from '@mui/icons-material/Rocket';
-import SentimentSatisfiedOutlinedIcon from '@mui/icons-material/SentimentSatisfiedOutlined';
 import { AuthContext } from '../../context/AuthContext';
+import BadgeIcon from '@mui/icons-material/Badge';
+import FeedIcon from '@mui/icons-material/Feed';
+import CurrencyExchangeOutlinedIcon from '@mui/icons-material/CurrencyExchangeOutlined';
 import { useContext } from 'react';
+import { red,blue,green } from '@mui/material/colors';
 export default function Sidebar() {
 
 
@@ -30,35 +21,31 @@ export default function Sidebar() {
             <div className="sidebarWrapper">
                 <ul className="sidebarList">
 
-                <li className="sidebarListItem">
+                {/* <li className="sidebarListItem">
                     <SentimentSatisfiedOutlinedIcon className='sidebarIcon' size="0.8em" color="green"/>
-                    <span className="sidebarListItemText title">Welcome {currentUser.username} </span>
+                    <span className="sidebarListItemText title">Welcome {currentUser.username.toUpperCase()} </span>
+                    </li>
+                    <hr className='sidebarHr'/> */}
+                    <li className="sidebarListItem">
+                    <FeedIcon className='sidebarIcon' size="1.5em" color="primary"/>
+                    <span className="sidebarListItemText">News Feed</span>
                     </li>
 
                     <li className="sidebarListItem">
-                    <FaRss className='sidebarIcon' size="1.5em" color="Orange"/>
-                    <span className="sidebarListItemText">Feed</span>
+                    <BadgeIcon className='sidebarIcon' size="1.5em" sx={{ color: red[400] }}/>
+                    <span className="sidebarListItemText">C Level Executives</span>
                     </li>
 
                     <li className="sidebarListItem">
-                    <MdChat className='sidebarIcon' size="1.5em" color="Green"/>
-                    <span className="sidebarListItemText">Chat</span>
-                    </li>
-
-                    <li className="sidebarListItem">
-                    <MdOutlineSchool className='sidebarIcon' size="1.5em" color="green"/>
+                    <CurrencyExchangeOutlinedIcon className='sidebarIcon' size="1.5em" sx={{ color: green[800] }}/>
                     <span className="sidebarListItemText">Investors</span>
                     </li>
 
                     <li className="sidebarListItem">
-                    <RocketIcon className='sidebarIcon' size="1.5em" color="Purple"/>
+                    <RocketIcon className='sidebarIcon' size="1.5em" sx={{ color: blue[300] }}/>
                     <span className="sidebarListItemText">Startups</span>
                     </li>
 
-                    <li className="sidebarListItem">
-                    <MdBookmarks className='sidebarIcon' size="1.5em" color="Pink"/>
-                    <span className="sidebarListItemText">Sales</span>
-                    </li>
                 </ul>
                 <hr className='sidebarHr'/>
                 <ul className="sidebarFriendList">

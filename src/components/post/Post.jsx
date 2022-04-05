@@ -57,7 +57,8 @@ export default function Post({ post }) {
             <Link to={`profile/${user.username}`}>
             <img src={user.profilePicture?PF+ user.profilePicture :PF+"person/noAvatar.png" } alt="" className="postProfileImg" />
             </Link>   
-            <span className="postUsername">{user.username}</span>
+            <span className="postUsername">{user.username?.charAt(0)?.toUpperCase() + user.username?.slice(1)}  </span>
+            {/* <b>({user.role})</b> */}
             <span className="postDate">{format(post.createdAt)}</span>
           </div>
           <div className="postTopRight">

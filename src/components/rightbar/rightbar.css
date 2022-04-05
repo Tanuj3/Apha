@@ -78,6 +78,7 @@
     flex-direction: column;
     margin-bottom: 20px;
     cursor: pointer;
+    color: black;
 }
 
 .rightbarFollowButton {
@@ -99,4 +100,10 @@
     outline: none;
 }
 
+.rightbarFollowingName {
+
+    color: black;
+    margin-top: 8px;
+    margin-left: 18px;
+}
 

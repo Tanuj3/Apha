@@ -18,7 +18,7 @@ export default function Topbar() {
     <div className="topbarContainer">
       <div className="topbarLeft">
         <Link to="/" style={{textDecoration:"none"}}><span className="logo">NAME HERE</span></Link>
-        <span className="badge">{user.username}</span>
+        {/* <span className="badge">{user.role}</span> */}
       </div>
       <div className="topbarCenter">
         <div className="searchbar">

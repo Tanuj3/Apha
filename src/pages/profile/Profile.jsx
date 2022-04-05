@@ -34,8 +34,8 @@ export default function Profile() {
                             <img src={user.profilePicture?PF+user.profilePicture :PF+"person/noAvatar.png"} alt="" className="profileUserImg" />
                         </div>
                         <div className="profileInfo">
-                            <h4 className="profileInfoName">{user.username}</h4>
-                            <span className="profileInfoDesc">{user.desc}</span>
+                            <h4 className="profileInfoName">{user.username?.charAt(0)?.toUpperCase() + user.username?.slice(1)}</h4>
+                            <span className="profileInfoDesc">{user.role?.toUpperCase()}</span>
 
                         </div>
                     </div>

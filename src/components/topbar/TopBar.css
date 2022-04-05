@@ -95,11 +95,6 @@
   cursor: pointer;
 }
 
-a{
-  color: white;
-}
-
-
 .badge {
   font-size: 15px;
   margin-left: 10px;
@@ -109,4 +104,8 @@ a{
 
 .badge:focus {
   color: red;
+}
+
+a{
+  color: white;
 }

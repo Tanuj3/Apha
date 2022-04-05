@@ -53,7 +53,7 @@ export default function Share() {
             <div className="shareWrapper">
                 <div className="shareTop">
                     <img src={user.profilePicture ? PF + user.profilePicture : PF + "person/noAvatar.png"} alt="" className="shareProfileImg" />
-                    <input type="text" placeholder={"What's in your mind " + user.username + "?"} className="shareInput" ref={desc} />
+                    <input type="text" placeholder={"What's in your mind " + user.username?.charAt(0)?.toUpperCase() + user.username?.slice(1) + "?"} className="shareInput" ref={desc} />
                 </div>
                 <hr className="shareHr" />
                 {file &&
